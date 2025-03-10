@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #003b46;
+            background-color: white;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Left Section - Dark Teal */
+        .left-section {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #003b46;
+            color: white;
+            position: relative;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .top-bar {
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .name {
+            margin-left: 15px;
+            font-size: 1.0em;
+            font-weight: 700;
+            color: #f4a623;
+        }
+
+        /* Navigation in Single Row */
+        nav {
+            position: absolute;
+            font-size: 0.8em;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #f4a623;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 400;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero-text {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .hero-text h1 {
+            font-size: 3em;
+            font-weight: 400;
+            color: #f4a623;
+        }
+
+        .hero-text h1 span {
+            font-size: 1.4em;
+            font-weight: 400;
+            color: white;
+        }
+
+        /* Right Section - White Background with Image */
+        .right-section {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('h.jpg') no-repeat center center/cover;
+        }
+
+        /* Other Sections */
+        .about, #projects, #contact {
+            padding: 60px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .about h2, #projects h2, #contact h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #003b46;
+        }
+
+        .about p, #projects ul, #contact p {
+            font-size: 1.2em;
+            color: #003b46;
+        }
+
+        button {
+            background-color: #f4a623;
+            color: #003b46;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #003b46;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003b46;
+            color: white;
+            font-size: 1em;
+        }
+
+        /* Sidebar (Resume Panel) */
+        .resume-sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100%;
+    background-color: #003b46;
+    color: white;
+    padding: 20px;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.4s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.resume-sidebar h2 {
+    color: #f4a623;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #f4a623;
+}
+
+/* Ensure the overlay covers everything */
+.resume-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="top-bar">
+                <img src="r.jpg" alt="My Logo" class="logo">
+                <h2 class="name">Pottabathini Rakshitha</h2>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="hero-text">
+                <h1>Hey, I'm <span>Pottabathini Rakshitha</span></h1>
+            </div>
+        </div>
+        <div class="right-section"></div>
+    </div>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I, Pottabathini Rakshitha, am an aspiring web developer with a strong foundation in HTML, CSS, and JavaScript, 
+            passionate about creating responsive, user-friendly, and visually appealing web applications. 
+            I am dedicated to continuous learning and innovation, with a keen interest in UI/UX design and
+             front-end development. Seeking opportunities to apply my skills in building efficient and interactive 
+             digital experiences.
+            .</p>
+        <button id="resume-btn">View Full Resume</button>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <li>Utkarsh – Project Showcase Platform.</li>
+        <p>Designed and developed a collaborative platform using the MERN stack, enabling                    
+            students to showcase, comment on, and rate academic projects. Enhanced                                                                   
+            project visibility and fostered knowledge sharing among students and                                                                                
+            industry professionals.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Mobile: 79********</p>
+        <p>Email:  <a href="#">rakshithapottabathini723@gmail.com</a></p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/yourname</a></p>
+        <p>GitHub: <a href="#">linkedin.com/in/yourname</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pottabathini Rakshitha. All rights reserved.</p>
+    </footer>
+
+    <!-- Resume Sidebar -->
+    <div class="resume-overlay" id="resume-overlay"></div>
+    <div class="resume-sidebar" id="resume-sidebar">
+        <span class="close-btn" id="close-resume">&times;</span>
+        <h2>Resume</h2>
+        
+        <p><strong>Education:</strong></p>
+        <p>SSC - ST. Augustine High School</p>
+        <p>Intermediate - Sri Chaitanya Junior College</p>
+        <p>B. Tech - Vignana Bharathi Institute Of Technology</p>
+    
+        <hr>
+    
+        <p><strong>Skills:</strong></p>
+        <ul>
+            <li>Basic knowledge of Microsoft Office Suite</li>
+            <li>Good at Documentation (MS-Word) & Presentations (MS-PowerPoint)</li>
+            <li>Programming languages: Python, Java</li>
+            <li>Basic knowledge of HTML, CSS, JavaScript</li>
+            <li>Experience in Adalo & Canva for no-code development & design</li>
+            <li>Proficient in business communication skills at entry-level</li>
+            <li>Ability to learn and apply new technology</li>
+            <li>Work effectively, both independently and as a team member</li>
+        </ul>
+    </div>    
+    <script>
+function openResume() {
+    document.getElementById("resume-sidebar").style.right = "0";
+    document.getElementById("resume-overlay").style.display = "block";
+}
+
+function closeResume() {
+    document.getElementById("resume-sidebar").style.right = "-450px";
+    document.getElementById("resume-overlay").style.display = "none";
+}
+
+document.getElementById("resume-btn").addEventListener("click", openResume);
+document.getElementById("close-resume").addEventListener("click", closeResume);
+document.getElementById("resume-overlay").addEventListener("click", closeResume);
+
+    </script>
+</body>
+</html>
